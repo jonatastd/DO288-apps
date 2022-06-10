@@ -74,8 +74,13 @@
       <url>https://maven.repository.redhat.com/ga</url>
     </pluginRepository>
   </pluginRepositories>
-  <build>
-    <plugins>
+  <build> <plugins>
+		  <!-- JKube Maven plugin -->
+		   <plugin>
+			    <groupId>org.eclipse.jkube</groupId>
+			     <artifactId>openshift-maven-plugin</artifactId>
+			      <version>1.2.0</version>
+			       </plugin>
       <plugin>
         <groupId>io.quarkus</groupId>
         <artifactId>quarkus-maven-plugin</artifactId>
@@ -140,6 +145,7 @@
         </plugins>
       </build>
       <properties>
+	       <jkube.build.switchToDeployment>true</jkube.build.switchToDeployment>
         <quarkus.package.type>native</quarkus.package.type>
       </properties>
     </profile>
